@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .result{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: wheat;
+            background-color: black;
+            height: 200px;
+            width: 200px;
+        }
+        p{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="inp">
+    <button id="btn">click </button><br><br>
+    <div class="result">asdfghjk</div>
+
+    <script>
+
+        const inp = document.getElementById('inp');
+        const btn = document.getElementById('btn');
+        const result = document.querySelector(".result");
+
+        btn.addEventListener('click', function(){
+            if (inp.value === ""  || inp.value==0) {
+                result.textContent = "please enter your age";
+            }
+            else if(inp.value >= 18 && inp.value<60){
+                result.textContent = "adult";
+            }
+            else if(inp.value < 18 || inp.value == 1){
+                result.textContent = "minor"
+            }
+            else if (inp.value>60 && inp.value <100){ 
+                result.textContent = "senior"
+            }
+            else{
+                result.textContent ="jaldi marja bhai"
+
+            }
+        })
+    </script>
+</body>
+</html>
