@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>palindrome checker</h1>
+    <input type="text" name="" id="inp">
+    <p id="result"></p>
+    <button id="check">check</button>
+    <script>
+        const inp = document.getElementById('inp');
+        const check = document.getElementById('check');
+        const result = document.getElementById('result');
+
+        check.addEventListener('click',function(){
+            const before = inp.value.toLowerCase();
+            const reversed = before.split("").reverse().join("");
+            if (before === "") {
+                result.textContent = "please enter the word";
+            } else if( before === reversed){
+                result.textContent = "palindrome";      
+            }else{ 
+            result.textContent = " not palindrome";      
+            }
+        })
+        let arr ="ssdffd,ashj"+"sdhjsd";
+        nn = arr.join();
+        console.log(nn);
+    </script>
+</body>
+</html>
