@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="inp">
+    <button id="btn">add task</button>
+    <ul id="list"></ul>
+
+    <script>
+        const inp = document.getElementById('inp');
+        const list =document.getElementById('list');
+        const btn = document.getElementById('btn') ;
+
+        btn.addEventListener('click',function(){
+            const task = document.createElement("li");
+            task.innerHTML = `<li>${inp.value}</li>`;
+            list.appendChild(task);
+            if(inp.value == ""){
+                window.alert("plese enter task");
+                task.remove();
+                return;
+            }
+            inp.value = ""; //this will empty the input field after adding task
+        })
+
+    </script>
+</body>
+</html>
