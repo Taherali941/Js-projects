@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="inp">
+    <button id="btn">reverse</button>
+    <p id="result"></p>
+
+    <script>
+        const inp = document.getElementById('inp');
+        const btn = document.getElementById('btn');
+        const result =document.getElementById('result');
+
+        btn.addEventListener('click',function(){
+            word = inp.value;
+            word = word.split("").reverse().join("");
+            if (word === "") {
+                result.textContent = "please enter the word"
+            }else{
+                result.textContent = `here is the reversed word   "${word}"` ;
+            }
+        })
+    </script>
+</body>
+</html>
