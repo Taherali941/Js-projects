@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>character counter</h1>
+    <textarea name="" id="txt"></textarea>
+    <p>total words <span id="words">0</span></p>
+    <p>total character <span id="characterss">0</span></p>
+
+    <script>
+        const txt = document.getElementById('txt');
+        const words = document.getElementById('words');
+        const char = document.getElementById('characterss');
+
+        txt.addEventListener('input', ()=>{
+            const text = txt.value;
+            char.textContent = text.replace(/\s/g,"").length;
+            
+            const word = text.trim().split(/\s+/);
+            words.textContent = word.length;
+
+        })
+    </script>
+</body>
+</html>
