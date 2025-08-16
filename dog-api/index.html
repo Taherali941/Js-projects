@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">click to generate</button>
+    <script>
+
+        const btn = document.getElementById('btn');
+        btn.addEventListener('click',function(){
+                    fetch('https://dog.ceo/api/breeds/image/random')
+        .then(res =>{
+        if(!res.ok){
+            throw new Error (` http error! status${res.status}`);
+         }
+            return res.json();
+        })
+        .then(data =>{
+            console.log("fetched : ",data);
+        
+        const img = document.createElement('img');
+        img.src = data.message;
+        img.alt = 'random dog';
+        img.style.width ='300px';
+        document.body.appendChild(img);
+        })
+        .catch(error =>{
+            console.error("erroe fetching data",error);
+        });
+        })
+        </script>
+</body>
+</html>
